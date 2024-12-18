@@ -11,7 +11,6 @@ app.use(express.json());
 // Endpoint to seed database
 app.get('/seed_db', async (req, res) => {
   await sequelize.sync({ force: true });
-
   const departments = await department.bulkCreate([
     { name: 'Engineering' },
     { name: 'Marketing' },
